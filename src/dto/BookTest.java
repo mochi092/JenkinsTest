@@ -7,16 +7,15 @@ import org.junit.Test;
 
 public class BookTest {
 
-	@Test(expected=java.lang.IllegalArgumentException.class)
-	public void test1() {
-		new Book().setIsbn(null);
-	}
-
 	@Test
-	public void test2(){
+	public void 適切なISBNを設定できる(){
 		Book book = new Book();
 		book.setIsbn("1234");
-		assertThat( book.getIsbn() , is("1235"));
+		assertThat( book.getIsbn() , is("1234"));
 	}
 
+	@Test(expected=java.lang.IllegalArgumentException.class)
+	public void nullはISBNに設定できない() {
+		new Book().setIsbn(null);
+	}
 }
