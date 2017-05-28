@@ -23,6 +23,7 @@
 	<target name="test" depends="compile">
 		<mkdir dir="${report.dir}" />
 		<junit printsummary="yes" haltonfailure="no">
+			<jvmarg value="-Dfile.encoding=UTF-8" />
 			<classpath>
 				<pathelement location="${class.dir}" />
 				<fileset dir="${lib.dir}">

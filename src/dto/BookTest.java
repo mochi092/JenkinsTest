@@ -8,12 +8,12 @@ import org.junit.Test;
 public class BookTest {
 
 	@Test(expected=java.lang.IllegalArgumentException.class)
-	public void nullをISBNに設定できなこと() {
+	public void test1() {
 		new Book().setIsbn(null);
 	}
 
 	@Test
-	public void ISBNを設定できること(){
+	public void test2(){
 		Book book = new Book();
 		book.setIsbn("1234");
 		assertThat( book.getIsbn() , is("1235"));
