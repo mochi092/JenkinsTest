@@ -5,27 +5,28 @@
 	<property name="class.dir" value="${build.dir}/WEB-INF/classes" />
 	<property name="report.dir" value="report" />
 	<property name="lib.dir" value="C:\ant\myLib" />
+
 	<target name="clean">
 		<delete dir="${build.dir}" />
 	</target>
+
 	<target name="compile" depends="clean">
 		<mkdir dir="${class.dir}" />
-		<javac srcdir="${src.dir}" destdir="${class.dir}" encoding="utf-8"
-			includeAntRuntime="true">
+		<javac srcdir="${src.dir}" destdir="${class.dir}" encoding="utf-8" includeAntRuntime="true">
 			<classpath>
 				<fileset dir="${lib.dir}">
-					<include file="*.jar" />
+					<include name="*.jar" />
 				</fileset>
 			</classpath>
 		</javac>
 	</target>
 	<target name="test" depends="compile">
 		<mkdir dir="${report.dir}" />
-		<junit printsummary="yes" haltonfailure="no" timeout="120">
+		<junit printsummary="yes" haltonfailure="no">
 			<classpath>
 				<pathelement location="${class.dir}" />
 				<fileset dir="${lib.dir}">
-					<include file="*.jar" />
+					<include name="*.jar" />
 				</fileset>
 			</classpath>
 			<formatter type="xml" />
