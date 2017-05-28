@@ -5,16 +5,15 @@
 	<property name="class.dir" value="${build.dir}/WEB-INF/classes"/>
 	<property name="report.dir" value="report"/>
 
-	<target name="main" depends="clean,compile"/>
 	<target name="clean">
 		<delete dir="${build.dir}"/>
 	</target>
-	<target name="compile">
+	<target name="compile" depends="clean">
 		<mkdir dir="${class.dir}"/>
 		<javac srcdir="${src.dir}" destdir="${class.dir}" encoding="utf-8" includeAntRuntime="true">
 		</javac>
 	</target>
-	<target name="junit">
+	<target name="test" depends="compile">
 		<mkdir dir="${report.dir}"/>
 		<junit printsummary="yes" haltonfailure="no" includeAntRuntime="true">
 			<formatter type="xml"/>
