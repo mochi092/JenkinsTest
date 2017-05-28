@@ -16,7 +16,7 @@ public class BookTest {
 	public void ISBNを設定できること(){
 		Book book = new Book();
 		book.setIsbn("1234");
-		assertThat( book.getIsbn() , is("1234"));
+		assertThat( book.getIsbn() , is("1235"));
 	}
 
 }
