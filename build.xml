@@ -18,7 +18,7 @@
 		<junit printsummary="yes" haltonfailure="no" includeAntRuntime="true">
 			<formatter type="xml"/>
 			<batchtest fork="yes" todir="${repord.dir}">
-				<fileset dir="${class.dir}">
+				<fileset dir="${src.dir}">
 					<include name="**/*Test.java" />
 				</fileset>
 			</batchtest>
