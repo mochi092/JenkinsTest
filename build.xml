@@ -22,7 +22,7 @@
 	</target>
 	<target name="test">
 		<mkdir dir="${report.dir}" />
-		<junit printsummary="yes" haltonfailure="yes">
+		<junit printsummary="yes" haltonfailure="no">
 			<jvmarg value="-Dfile.encoding=UTF-8" />
 			<classpath>
 				<pathelement location="${class.dir}" />
