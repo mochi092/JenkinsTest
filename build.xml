@@ -6,7 +6,7 @@
 
 	<target name="main" depends="clean,compile"></target>
 	<target name="clean">
-		<delete dir="${build.dir"></delete>
+		<delete dir="${build.dir}"></delete>
 	</target>
 	<target name="compile">
 		<mkdir dir="${class.dir}"></mkdir>
