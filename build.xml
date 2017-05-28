@@ -1,22 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="JenkinsTest" default="main" basedir=".">
-	<property name="src.dir" value="src"/>
-	<property name="build.dir" value="build"/>
-	<property name="class.dir" value="${build.dir}/WEB-INF/classes"/>
-	<property name="report.dir" value="report"/>
-
+	<property name="src.dir" value="src" />
+	<property name="build.dir" value="build" />
+	<property name="class.dir" value="${build.dir}/WEB-INF/classes" />
+	<property name="report.dir" value="report" />
+	<property name="lib.dir" value="C:\ant\myLib" />
 	<target name="clean">
-		<delete dir="${build.dir}"/>
+		<delete dir="${build.dir}" />
 	</target>
 	<target name="compile" depends="clean">
-		<mkdir dir="${class.dir}"/>
-		<javac srcdir="${src.dir}" destdir="${class.dir}" encoding="utf-8" includeAntRuntime="true">
+		<mkdir dir="${class.dir}" />
+		<javac srcdir="${src.dir}" destdir="${class.dir}" encoding="utf-8"
+			includeAntRuntime="true">
+			<classpath>
+				<fileset dir="${lib.dir}">
+					<include file="*.jar" />
+				</fileset>
+			</classpath>
 		</javac>
 	</target>
 	<target name="test" depends="compile">
-		<mkdir dir="${report.dir}"/>
-		<junit printsummary="yes" haltonfailure="no" includeAntRuntime="true">
-			<formatter type="xml"/>
+		<mkdir dir="${report.dir}" />
+		<junit printsummary="yes" haltonfailure="no" timeout="120">
+			<classpath>
+				<pathelement location="${class.dir}" />
+				<fileset dir="${lib.dir}">
+					<include file="*.jar" />
+				</fileset>
+			</classpath>
+			<formatter type="xml" />
 			<batchtest fork="yes" todir="${repord.dir}">
 				<fileset dir="${src.dir}">
 					<include name="**/*Test.java" />
