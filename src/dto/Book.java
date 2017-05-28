@@ -9,4 +9,8 @@ public class Book {
 		}
 		this.isbn = isbn;
 	}
+
+	public String getIsbn(){
+		return this.isbn;
+	}
 }
