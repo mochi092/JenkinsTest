@@ -20,9 +20,9 @@
 			</classpath>
 		</javac>
 	</target>
-	<target name="test" depends="compile">
+	<target name="test">
 		<mkdir dir="${report.dir}" />
-		<junit printsummary="yes" haltonfailure="no">
+		<junit printsummary="yes" haltonfailure="yes">
 			<jvmarg value="-Dfile.encoding=UTF-8" />
 			<classpath>
 				<pathelement location="${class.dir}" />
