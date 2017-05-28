@@ -3,6 +3,7 @@
 	<property name="src.dir" value="src"/>
 	<property name="build.dir" value="build"/>
 	<property name="class.dir" value="${build.dir}/WEB-INF/classes"/>
+	<property name="report.dir" value="report"/>
 
 	<target name="main" depends="clean,compile"></target>
 	<target name="clean">
@@ -12,6 +13,17 @@
 		<mkdir dir="${class.dir}"></mkdir>
 		<javac srcdir="${src.dir}" destdir="${class.dir}" includeAntRuntime="true">
 		</javac>
+	</target>
+	<target name="junit">
+		<mkdir dir="${report.dir"></mkdir>
+		<junit printsummary="yes" haltonfailure="no" includeAntRuntime="true">
+			<formatter type="xml"></formatter>
+			<batchtest form="yes" todir="${repord.dir}">
+				<fileset dir="${class.dir}">
+					<include name="**/*Test.java" />
+				</fileset>
+			</batchtest>
+		</junit>
 	</target>
 
 
