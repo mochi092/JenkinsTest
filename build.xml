@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="JenkinsTest" default="main" basedir=".">
-	<target name="main">
-		<echo>main</echo>
+	<property name="src.dir" value="src"/>
+	<property name="build.dir" value="build"/>
+	<property name="class.dir" value="${build.dir}/WEB-INF/classes"/>
+
+	<target name="main" depends="compile"></target>
+	<target name="compile">
+		<mkdir dir="${class.dir}"></mkdir>
+		<javac srcdir="${src.dir}" destdir="${class.dir"} includeAntRuntime="true">
+
+		</javac>
 	</target>
 
 
