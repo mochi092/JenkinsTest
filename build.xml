@@ -7,7 +7,7 @@
 	<target name="main" depends="compile"></target>
 	<target name="compile">
 		<mkdir dir="${class.dir}"></mkdir>
-		<javac srcdir="${src.dir}" destdir="${class.dir"} includeAntRuntime="true">
+		<javac srcdir="${src.dir}" destdir="${class.dir}" includeAntRuntime="true">
 
 		</javac>
 	</target>
