@@ -10,7 +10,7 @@ public class Book2Test {
 	public void 適切なISBNを設定できる(){
 		Book book = new Book();
 		book.setIsbn("1234");
-		assertEquals("1234",book.getIsbn());
+		assertEquals("1235",book.getIsbn());
 	}
 
 	@Test(expected=java.lang.IllegalArgumentException.class)
