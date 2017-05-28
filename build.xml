@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="JenkinsTest" default="main" basedir=".">
-	<target name="main"></target>
+	<target name="main">
+		<echo>main</echo>
+	</target>
 
 
 </project>
