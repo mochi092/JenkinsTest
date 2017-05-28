@@ -4,11 +4,13 @@
 	<property name="build.dir" value="build"/>
 	<property name="class.dir" value="${build.dir}/WEB-INF/classes"/>
 
-	<target name="main" depends="compile"></target>
+	<target name="main" depends="clean,compile"></target>
+	<target name="clean">
+		<rmdir dir="${build.dir"></rmdir>
+	</target>
 	<target name="compile">
 		<mkdir dir="${class.dir}"></mkdir>
 		<javac srcdir="${src.dir}" destdir="${class.dir}" includeAntRuntime="true">
-
 		</javac>
 	</target>
 
