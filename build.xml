@@ -22,7 +22,7 @@
 	</target>
 	<target name="test">
 		<mkdir dir="${report.dir}" />
-		<junit printsummary="yes" haltonfailure="no">
+		<junit printsummary="yes" haltonfailure="yes">
 			<jvmarg value="-Dfile.encoding=UTF-8" />
 			<classpath>
 				<pathelement location="${class.dir}" />
@@ -31,7 +31,7 @@
 				</fileset>
 			</classpath>
 			<formatter type="xml" />
-			<batchtest fork="no" todir="${report.dir}">
+			<batchtest fork="yes" todir="${report.dir}">
 				<fileset dir="${src.dir}">
 					<include name="**/*Test.java" />
 				</fileset>
