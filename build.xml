@@ -40,10 +40,7 @@
 	</target>
 
 	<target name="deploy">
-		<war destfile="app.war" needxmlfile="false">
-			<fileset dir="WebContent">
-				<excludes name="WEB-INF"/>
-			</fileset>
+		<war destfile="app.war" basedir="WebContent" needxmlfile="false" >
 			<classes dir="${build.dir}"/>
 			<lib dir="WebContent/WEB-INF/lib"/>
 		</war>
