@@ -12,7 +12,7 @@
 
 	<target name="compile" depends="clean">
 		<mkdir dir="${class.dir}" />
-		<javac srcdir="${src.dir}" destdir="${class.dir}" encoding="utf-8" includeAntRuntime="true">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" encoding="utf-8" includeAntRuntime="true">
 			<classpath>
 				<fileset dir="${lib.dir}">
 					<include name="*.jar" />
