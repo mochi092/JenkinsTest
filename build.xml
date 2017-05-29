@@ -11,8 +11,8 @@
 	</target>
 
 	<target name="compile" depends="clean">
-		<mkdir dir="${class.dir}" />
-		<javac srcdir="${src.dir}" destdir="${class.dir}" encoding="utf-8" includeAntRuntime="true">
+		<mkdir dir="${build.dir}" />
+		<javac srcdir="${src.dir}" destdir="${build.dir}" encoding="utf-8" includeAntRuntime="true">
 			<classpath>
 				<fileset dir="${lib.dir}">
 					<include name="*.jar" />
@@ -28,6 +28,7 @@
 				<fileset dir="${lib.dir}">
 					<include name="*.jar" />
 				</fileset>
+				<pathelement path="." />
 			</classpath>
 			<formatter type="xml" />
 			<batchtest fork="yes" todir="${report.dir}">
