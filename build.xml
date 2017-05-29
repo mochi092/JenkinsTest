@@ -28,7 +28,7 @@
 				<fileset dir="${lib.dir}">
 					<include name="*.jar" />
 				</fileset>
-				<pathelement path="." />
+				<pathelement location="${build.dir}" />
 			</classpath>
 			<formatter type="xml" />
 			<batchtest fork="yes" todir="${report.dir}">
