@@ -11,7 +11,7 @@
 	</target>
 
 	<target name="compile" depends="clean">
-		<mkdir dir="${class.dir}" />
+		<mkdir dir="${build.dir}" />
 		<javac srcdir="${src.dir}" destdir="${build.dir}" encoding="utf-8" includeAntRuntime="true">
 			<classpath>
 				<fileset dir="${lib.dir}">
@@ -25,7 +25,6 @@
 		<junit printsummary="yes" haltonfailure="yes">
 			<jvmarg value="-Dfile.encoding=UTF-8" />
 			<classpath>
-				<pathelement location="${class.dir}" />
 				<fileset dir="${lib.dir}">
 					<include name="*.jar" />
 				</fileset>
