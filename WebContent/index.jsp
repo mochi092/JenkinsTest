@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8"/>
-<title>Insert title here</title>
+<title>●●ブックス</title>
 </head>
 <body>
-hogehoge
+<h1>ようこそ、●●ブックスへ！</h1>
 </body>
 </html>
